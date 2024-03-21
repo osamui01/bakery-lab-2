@@ -6,6 +6,28 @@ const CakeForm = ({cakes, setCakes}) => {
     const [rating, setRating] = useState(0);
     const [error, setError] = useState("");
 
+    const hanldleValidation = () => {
+        let errorMessage = "";
+        if(cakes.find((cake) => cake.cakeName === cakeName)){
+            errorMessage = "This cake already exists!"
+        }
+
+        if(rating < 0){
+            errorMessage = "Invalid rating!"
+        }
+
+        setError(errorMessage);
+        return errorMessage !== "";    
+    }
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+
+        if(!hanldleValidation()){
+            
+        }
+    }
+
     return ( 
         <>
             <h2>Enter New Cake Recipes</h2>
@@ -33,6 +55,7 @@ const CakeForm = ({cakes, setCakes}) => {
                 />
                 <input type="Submit" value="submit"/>
             </form>
+            <p>{error}</p>
         </>
      );
 }
