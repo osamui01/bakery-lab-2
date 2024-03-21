@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Cake from "../Components/Cake";
+import CakeForm from "../Components/CakeForm";
 // import CakeForm
 
 const RecipeContainer = () => {
@@ -48,7 +49,12 @@ const RecipeContainer = () => {
 
   const list = cakes.map((cake, index) => <Cake key={index} cake={cake} />);
 
-  return <>{list}</>;
+  return (
+    <>
+      {list}
+      <CakeForm cakes={cakes} setCakes={setCakes}/>
+    </>
+  );
 };
 
 export default RecipeContainer;
