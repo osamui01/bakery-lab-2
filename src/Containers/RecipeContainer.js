@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cake from "../Components/Cake";
 import CakeForm from "../Components/CakeForm";
+import SearchForm from "../Components/SearchForm";
 // import CakeForm
 
 const RecipeContainer = () => {
@@ -47,12 +48,29 @@ const RecipeContainer = () => {
     },
   ]);
 
+  const [showList, setShowList] = useState(true);
+
+  const handleShowList = () => {
+    setShowList(false);
+  };
+
+  const handleDontShowList = () => {
+    setShowList(true);
+  };
+
   const list = cakes.map((cake, index) => <Cake key={index} cake={cake} />);
 
   return (
     <>
-      {list}
-      <CakeForm cakes={cakes} setCakes={setCakes}/>
+      <SearchForm
+        cakes={cakes}
+        handleShowList={handleShowList}
+        handleDontShowList={handleDontShowList}
+      />
+
+      {showList ? list : <p>Test</p>}
+
+      <CakeForm cakes={cakes} setCakes={setCakes} />
     </>
   );
 };

@@ -4,7 +4,7 @@ const Cake = ({ cake }) => {
       <h2>{cake.cakeName}</h2>
       <ul>
         {cake.ingredients.map((ingredient, index) => (
-          <li id={index}>{ingredient}</li>
+          <li key={index}>{ingredient}</li>
         ))}
       </ul>
       <p>Rating: {cake.rating}</p>
