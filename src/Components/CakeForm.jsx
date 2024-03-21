@@ -24,7 +24,14 @@ const CakeForm = ({cakes, setCakes}) => {
         event.preventDefault();
 
         if(!hanldleValidation()){
-            
+            const updatedCakes = [...cakes]
+            const newCakes = {
+                cakeName: cakeName,
+                ingredients: ingredients,
+                rating: rating
+            }
+            updatedCakes.push(newCakes);
+            setCakes(updatedCakes);
         }
     }
 
