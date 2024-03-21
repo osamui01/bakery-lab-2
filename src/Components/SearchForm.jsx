@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/searchFormStyles.css"
 
 const SearchForm = ({ cakes }) => {
   const [search, setSearch] = useState("");

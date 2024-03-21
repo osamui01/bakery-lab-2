@@ -1,0 +1,31 @@
+h2 {
+    font-family: Trebuchet MS;
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+}
+
+p {
+    font-style: oblique;
+    font-family: Trebuchet MS;
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+}
+
+li {
+    list-style-type: circle;
+    font-family: Trebuchet MS;
+    padding-left: 10px;
+}
+
+/* .grid-container {
+    display: grid;
+    grid: 1fr 1fr 1fr;
+}
+
+.grid-container > div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  } */

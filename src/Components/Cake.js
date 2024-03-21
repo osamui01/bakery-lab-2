@@ -1,13 +1,16 @@
+import "../styles/cakeStyles.css"
 const Cake = ({ cake }) => {
   return (
     <>
-      <h2>{cake.cakeName}</h2>
-      <ul>
-        {cake.ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
-      <p>Rating: {cake.rating}</p>
+    <div class="grid-container">
+        <h2>{cake.cakeName}</h2>
+        <ul class="cake-list">
+          {cake.ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+        <p>Rating: {cake.rating}</p>
+      </div>
     </>
   );
 };
